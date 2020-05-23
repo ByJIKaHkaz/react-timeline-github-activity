@@ -41,7 +41,7 @@ export class Fetcher extends React.Component {
   fetchData(url, login) {
     const { dataCountForUser } = this.props;
     const query = `?per_page=${dataCountForUser}`
-    fetchCached(url + query)
+    fetch(url + query)
       .then(res => {
         if (res.status >= 400) {
           throw new Error("Bad response from server");
