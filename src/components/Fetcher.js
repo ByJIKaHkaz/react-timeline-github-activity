@@ -4,9 +4,9 @@ import fetch from 'cross-fetch';
 import { ClipLoader } from 'react-spinners';
 import { className } from '../App';
 
-function fetchCached (url) {
-  return fetch(url.replace('https://api.github.com', 'https://hackathonbrn.lunatic.cat'));
-}
+// function fetchCached (url) {
+//   return fetch(url.replace('https://api.github.com', 'https://hackathonbrn.lunatic.cat'));
+// }
 
 export class Fetcher extends React.Component {
   constructor(props) {
@@ -25,7 +25,7 @@ export class Fetcher extends React.Component {
   };
 
   fetchOrgUsers() {
-    fetchCached(`https://api.github.com/orgs/${this.props.organization}/members`)
+    fetch(`https://api.github.com/orgs/${this.props.organization}/members`)
       .then(res => {
         if (res.status >= 400) {
           throw new Error("Bad response from server");
