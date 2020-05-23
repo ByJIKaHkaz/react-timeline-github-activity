@@ -13,7 +13,7 @@ export class Fetcher extends React.Component {
     super(props);
     this.fetchOrgUsers = this.fetchOrgUsers.bind(this);
     window.fetchOrgUsers = this.fetchOrgUsers;
-  }
+  };
 
   componentDidMount() {
     this.fetchOrgUsers();
